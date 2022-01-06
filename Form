@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi economia</title>
+</head>
+<h1>Mi economia</h1>
+<body>
+    <form class="claseFormulario">
+        <div>
+            Tipo de transaccion
+            <input id="Ingreso" type="radio">
+            <label for="transactionIngreso">Ingreso</label>
+            <input id="Egreso" type="radio">
+            <label for="transactionIngreso">Egreso</label>
+        </div>
+        <div>
+            <label for="=transactionMonto">Monto</label>
+            <input id="transactionAmount" type="number" name="transactionAmount">
+            <div>
+        <div>
+
+        <div>
+            <label for="transactionDescription">Descripción</label>
+            <input id="transactionDescription" name="transactionDescription">
+        </div>
+
+        <div>
+
+        <label for="transactionCategory">Categoria</label>
+        <input id="transactionCategory" name="transactionCategory">
+        <div>
+    <div>
+    <button>Añadir</button>
+    </div>
+
+    </form>
+
+    <div class="tableFormat">
+       <table>
+           <tr>
+               <th>
+                   Tipo
+               </th>
+               <th>
+                   Descripción
+               </th>
+               <th>
+                   Monto
+               </th>
+               <th>
+                   Categoria
+               </th>
+           </tr>
+           <tr>
+               <td>
+                   Ingreso
+               </td>
+               <td>
+                   Sueldo
+               </td>
+               <td>
+                   1000
+               </td>
+               <td>
+                   Trabajo
+               </td>
+           </tr>
+       </table>
+   </div>
+    
+    <style>
+    h1{
+        text-align: center;
+    }
+    form {
+        text-align: center;
+    }
+    .claseFormulario{
+        background-color: wheat;
+        margin-top: 20px;
+    }
+
+    th,td {
+        padding: 10px;
+        border: solid red;
+    }
+
+    .tableFormat table {
+        margin: 0 auto;
+    }
+    </style>
+    
+</body>
+
+</html>
