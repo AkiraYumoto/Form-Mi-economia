@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lenang="">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,92 +8,132 @@
     <title>Mi economia</title>
 </head>
 <h1>Mi economia</h1>
+
 <body>
-    <form class="claseFormulario">
+    <form class="claseFormulario" id="transactionForm">
         <div>
             Tipo de transaccion
-            <input id="Ingreso" type="radio">
+            <input id="Ingreso" type="radio" name="transactionType" value="ingreso" >
             <label for="transactionIngreso">Ingreso</label>
-            <input id="Egreso" type="radio">
+            <input id="Egreso" type="radio" name="transactionType" value="egreso" >
             <label for="transactionIngreso">Egreso</label>
         </div>
         <div>
             <label for="=transactionMonto">Monto</label>
-            <input id="transactionAmount" type="number" name="transactionAmount">
+            <input id="transactionAmount" type="number" name="transactionAmount" required>
             <div>
-        <div>
+                <div>
 
-        <div>
-            <label for="transactionDescription">Descripción</label>
-            <input id="transactionDescription" name="transactionDescription">
+                    <div>
+                        <label for="transactionDescription">Descripción</label>
+                        <input id="transactionDescription" name="transactionDescription" >
+                    </div>
+
+                    <div>
+
+                        <label for="transactionCategory">Categoria</label>
+                        <input id="transactionCategory" name="transactionCategory" >
+                        <div>
+                            <div>
+                                <button>Añadir</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div>
-
-        <label for="transactionCategory">Categoria</label>
-        <input id="transactionCategory" name="transactionCategory">
-        <div>
-    <div>
-    <button>Añadir</button>
-    </div>
 
     </form>
 
     <div class="tableFormat">
-       <table>
-           <tr>
-               <th>
-                   Tipo
-               </th>
-               <th>
-                   Descripción
-               </th>
-               <th>
-                   Monto
-               </th>
-               <th>
-                   Categoria
-               </th>
-           </tr>
-           <tr>
-               <td>
-                   Ingreso
-               </td>
-               <td>
-                   Sueldo
-               </td>
-               <td>
-                   1000
-               </td>
-               <td>
-                   Trabajo
-               </td>
-           </tr>
-       </table>
-   </div>
+        <table id="transactionTable">
+            <tr>
+                <th>
+                    Tipo
+                </th>
+                <th>
+                    Descripción
+                </th>
+                <th>
+                    Monto
+                </th>
+                <th>
+                    Categoria
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Ingreso
+                </td>
+                <td>
+                    Sueldo
+                </td>
+                <td>
+                    1000
+                </td>
+                <td>
+                    Trabajo
+                </td>
+            </tr>
+        </table>
+    </div>
     
+    <script>
+        const form = document.getElementById("transactionForm")
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            let transactionFormData = new FormData(form);
+            let transactionTableRef = document.getElementById("transactionTable");
+            let newTransactionRowRef = transactionTableRef.insertRow(-1);
+            let newTypeCellRef = newTransactionRowRef.insertCell(0);
+            newTypeCellRef.textContent = transactionFormData.get("transactionType")
+            newTypeCellRef = newTransactionRowRef.insertCell(1);
+            newTypeCellRef.textContent = transactionFormData.get("transactionDescription")
+            newTypeCellRef = newTransactionRowRef.insertCell(2);
+            newTypeCellRef.textContent = transactionFormData.get("transactionAmount")
+            newTypeCellRef = newTransactionRowRef.insertCell(3);
+            newTypeCellRef.textContent = transactionFormData.get("transactionCategory")
+        }
+        )
+    </script>
+
     <style>
-    h1{
-        text-align: center;
-    }
-    form {
-        text-align: center;
-    }
-    .claseFormulario{
-        background-color: wheat;
-        margin-top: 20px;
-    }
+        h1 {
+            text-align: center;
+            text-decoration: blue;
+            background-color: white;
 
-    th,td {
-        padding: 10px;
-        border: solid red;
-    }
+        }
 
-    .tableFormat table {
-        margin: 0 auto;
-    }
+        form {
+            text-align: center;
+        }
+
+        .claseFormulario {
+            background-color: white;
+            margin-top: 20px;
+        }
+
+        td,
+        th {
+            padding: 20px;
+            border: solid blue;
+            text-align: center;
+        }
+
+        .tableFormat table {
+            border: blue;
+            margin: auto;
+            flex: 0%;
+            background-color: white;
+        }
+
+        html {
+            background-color: seagreen;
+        }
     </style>
-    
+
 </body>
 
 </html>
